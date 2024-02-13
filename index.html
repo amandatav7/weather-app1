@@ -4,34 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+
 </head>
 
 <body>
-    <header>
-        <form>
-            <input type="search" placeholder="Enter a city.." required id="city-input">
-            <input type="submit" value="Search">
-        </form>
-    </header>
-    <main>
-        <div id="weather-details"></div>
-        <h1>Dallas</h1>
-        <p>Tuesday 19:52, overcast clouds
-            Humidity: 87%, Wind: 8.75km/h
-        </p>
-        </div>
+    <div id="container">
+        <header>
+            <form id="form">
+                <input type="search" placeholder="Enter a city.." required id="form-input">
+                <input type="submit" value="Search" id="form-button">
+            </form>
+            <link rel="stylesheet" href="src/style.css">
+        </header>
+        <main>
+            <div id="weather-details"></div>
+            <h1>Dallas</h1>
+            <p>Tuesday 19:52, overcast clouds
+                Humidity: 87%, Wind: 8.75km/h
+            </p>
 
-        <div id="current-temp">
-            🌤️ 11°C
-        </div>
-    </main>
+            <div id="current-temp">
+                🌤️ 11°C
+            </div>
+        </main>
 
-    <footer>
-        Coded by <a href="https://github.com/amandatav7" target="_blank">Amanda Tavares</a> on
-        <a href="https://github.com/amandatav7/weather-app1" target="_blank">Github</a> hosted by
-        <a href="https://weather-app-shecodes-amandatav.netlify.app/" target="_blank">Netlify</a>
-    </footer>
+        <footer>
+            This project was coded by <a href="https://github.com/amandatav7" target="_blank">Amanda Tavares</a>, is
+            open-sourced on
+            <a href="https://github.com/amandatav7/weather-app1" target="_blank">Github</a> hosted on
+            <a href="https://weather-app-shecodes-amandatav.netlify.app/" target="_blank">Netlify</a>
+        </footer>
+    </div>
 </body>
 
 </html>

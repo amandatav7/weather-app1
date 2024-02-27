@@ -18,14 +18,18 @@
             <link rel="stylesheet" href="src/style.css">
         </header>
         <main>
-            <div id="weather-details"></div>
-            <h1>Dallas</h1>
-            <p>Tuesday 19:52, overcast clouds
-                Humidity: 87%, Wind: 8.75km/h
-            </p>
-
-            <div id="current-temp">
-                🌤️ 11°C
+            <div id="weather-data">
+                <div id="weather-details">
+                    <h1>Dallas</h1>
+                    <p id="weather-details-2">Tuesday 19:52, <strong>overcast clouds</strong>
+                        <br />
+                        Humidity:<strong>87%</strong>, Wind: <strong>8.75km/h</strong>
+                    </p>
+                </div>
+                <div id="current-temp">
+                    <span id="icon">🌤️</span>
+                    <span id="temp">11</span><span id="unit">°C</span>
+                </div>
             </div>
         </main>
 

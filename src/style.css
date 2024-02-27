@@ -34,6 +34,38 @@ header{
     color: white;
     border: none;
 }
+#weather-data{
+   display: flex;
+    justify-content: space-between;
+}
+h1{
+   font-size: 38px;
+   line-height: 48px;
+   margin: 0;
+}
+#weather-details-2{
+    font-size: 16px;
+    color: rgba(39, 33, 66, .4);
+}
+#weather-details-2 strong{
+    color: rgba(16, 138, 126, .8);
+    line-height:  24px;
+}
+#icon{
+    font-size: 44px;
+    margin-right: 10px;
+    position: relative;
+    bottom: 10px;    
+}
+#temp{
+    font-size: 88px;
+    font-weight: bold;
+}
+#unit{
+    font-size: 24px;
+    position: relative;
+    bottom: 45px;
+}
 footer{
     border-top: thin solid #eaf6f6;
     padding: 20px 0 0 0;

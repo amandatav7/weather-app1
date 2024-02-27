@@ -43,11 +43,11 @@ h1{
    line-height: 48px;
    margin: 0;
 }
-#weather-details-2{
+#weather-details{
     font-size: 16px;
     color: rgba(39, 33, 66, .4);
 }
-#weather-details-2 strong{
+#weather-details strong{
     color: rgba(16, 138, 126, .8);
     line-height:  24px;
 }

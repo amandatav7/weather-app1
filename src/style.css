@@ -52,10 +52,10 @@ h1{
     line-height:  24px;
 }
 #icon{
-    font-size: 44px;
-    margin-right: 10px;
+    width: 100px;
+    height: 100px;
     position: relative;
-    bottom: 10px;    
+    top: 21.5px;
 }
 #temp{
     font-size: 88px;

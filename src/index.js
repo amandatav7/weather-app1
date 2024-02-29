@@ -46,7 +46,32 @@ function handleSearch(event) {
     searchCity(formInput.value);
 }
 
+function displayForecast(){
+    let days = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
+    let forecastHtml = "";
+    
+    days.forEach(function(day) {
+        forecastHtml = 
+        forecastHtml +
+        `
+        <div id="weather-forecast-day">
+        <div id="weather-forecast-date">${day}</div>
+        <img id="forecast-icon" src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png">
+        <div id="weather-forecast-temperatures">
+        <span id="temp-max">30°C </span> <span id="temp-min"> 10°C</span>
+        </div>
+        </div>`;
+    });
+    
+    let forecast = document.querySelector("#weather-forecast-container");
+    forecast.innerHTML = forecastHtml;
+}
+
+    
+
+
 let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", handleSearch);
 
 searchCity("Dallas");
+displayForecast();

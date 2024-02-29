@@ -66,6 +66,25 @@ h1{
     position: relative;
     bottom: 45px;
 }
+#weather-forecast-container{
+    display: flex;
+    justify-content: space-between;
+}
+#weather-forecast-day{
+    text-align: center;
+    margin-top: 20px;
+}
+#weather-forecast-date{
+    font-weight: bold;
+    font-size: 16px;
+}
+#weather-forecast-temperatures{
+    font-size: 14px;
+}
+#temp-min{
+    opacity: .55;
+
+}
 footer{
     border-top: thin solid #eaf6f6;
     padding: 20px 0 0 0;

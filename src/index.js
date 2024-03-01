@@ -18,6 +18,8 @@ function updateWeather(response) {
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windElement.innerHTML = `${response.data.wind.speed}km/h`
     timeElement.innerHTML = formatDate(date);
+
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -46,21 +48,35 @@ function handleSearch(event) {
     searchCity(formInput.value);
 }
 
-function displayForecast(){
-    let days = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
+function formatDay(timestamp){
+    let date = new Date(timestamp *1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[date.getDay()];
+}
+
+function getForecast(city) {
+    let apiKey = "d2814dadfb2t312f8a3e3402o3510096";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response){
     let forecastHtml = "";
     
-    days.forEach(function(day) {
-        forecastHtml = 
-        forecastHtml +
-        `
-        <div id="weather-forecast-day">
-        <div id="weather-forecast-date">${day}</div>
-        <img id="forecast-icon" src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png">
-        <div id="weather-forecast-temperatures">
-        <span id="temp-max">30°C </span> <span id="temp-min"> 10°C</span>
-        </div>
-        </div>`;
+    response.data.daily.forEach(function(day, index) {
+        if (index < 6) {
+            forecastHtml = 
+            forecastHtml +
+            `
+            <div id="weather-forecast-day">
+                <div id="weather-forecast-date">${formatDay(day.time)}</div>
+                <img id="forecast-icon" src="${day.condition.icon_url}">
+                <div id="weather-forecast-temperatures">
+                    <span id="temp-max">${Math.round(day.temperature.maximum)}°C </span> <span id="temp-min"> ${Math.round(day.temperature.minimum)}°C</span>
+                </div>
+            </div>`;
+        }
     });
     
     let forecast = document.querySelector("#weather-forecast-container");
@@ -74,4 +90,4 @@ let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", handleSearch);
 
 searchCity("Dallas");
-displayForecast();
+
